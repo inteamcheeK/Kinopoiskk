@@ -1,0 +1,33 @@
+@model User
+
+@{
+    Layout = "Auth_Layout";
+}              
+
+<div class="form-horizontal" style="text-align: center;">
+<form asp-controller="User" asp-action="Store">
+  <div class="col-md-4 offset-md-4">
+    <h1>REGISTER PAGE</h1>
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input class="form-control" name="FirstName" type="text" placeholder="First name">
+    </div>
+    <div class="form-group">
+        <label for="LastName" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Last Name</label>
+        <input class="form-control" name="LastName" type="text" placeholder="Last Name">
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input class="form-control" name="Email" type="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input class="form-control" name="Password" type="password" placeholder="Password">
+        <br>
+      <button class="btn btn-primary" asp-controller="User" asp-action="Store">REGISTER</button>
+      <p class="mb-0">Have an account? <a asp-controller="Auth" asp-action="Login" class="text-black-50 fw-bold">Sign in</a>
+      </p>
+    </div>
+    </form>
+  </div>
+    </div>

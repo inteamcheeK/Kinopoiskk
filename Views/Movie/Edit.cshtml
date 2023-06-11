@@ -1,0 +1,45 @@
+@model Movie 
+
+@{
+    ViewData["Title"] = "Изменить кино";
+}
+
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="Movie" asp-action="Update" asp-route-id="@Model.Id" method="post">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Название фильма: </label>
+                <input type="text" class="form-control" value="@Model.Name" name="Name" placeholder="Название фильма" autocomplete="off" />
+            </div>
+            <div class="mb-3">
+                <label for="Year" class="form-label"> Год выпуска: </label> 
+                <input type="number" class="form-control"value="@Model.Year" name="Year" placeholder="Год выпуска" autocomplete="off" />
+            </div>
+    <div class="mb-3">
+        <label for="Country">Country</label>
+            <select name="Country" id="Country" class="form-select">
+                @if (Model.Country == "ru" )
+                {
+                    <option selected value="ru">Russia</option>
+                }
+                else
+                {
+                    <option value="ru">Russia</option>
+                }
+                
+                @if (Model.Country == "gb")
+                {
+                    <option selected value="gb">Great Britan</option>
+                }
+                else
+                {
+                    <option value="gb">Great Britain</option>
+                }
+
+                <option value="us">USA</option>
+                <option value="de">Deutschland</option>
+            </select>
+    </div>
+        <button type="submit" class="btn btn-outline-success">Отправить</button></a>
+</form>
+</div>

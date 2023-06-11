@@ -1,0 +1,50 @@
+@model List<Genre>
+<style>
+.display { display: none; }
+.display:not(:checked) + label + * { display: none; }
+ 
+.display:not(:checked) + label,
+.display:checked + label {
+display: inline-block;
+padding: 2px 10px;
+border-radius: 2px;
+color: #fff;
+background: #4e6473;
+cursor: pointer;
+text-align: center;
+}
+.display:checked + label {
+background: #000000;
+
+}
+</style>
+<input type="checkbox" id="button" class="display"/>
+<label for="button" class="display">Tap to button for the open genre list</label>
+    <div>
+<br>
+<table class="table" border="1" style="border-color: rgb(221, 65, 18);">
+    <tr style="text-align: center;">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+   @foreach (Genre janr in Model)
+    {
+        <tr>
+            <td>@janr.Id</td>
+            <td>@janr.Name</td>
+        <td>
+            <a asp-controller="Genre" asp-action="Edit" asp-route-id="@janr.Id">Изменить</a>
+        </td>
+        <td>
+            <a asp-controller="Genre" asp-action="Delete" asp-route-id="@janr.Id">Remove</a>
+        </td>
+    </tr>    
+    
+    }
+</table>
+    <a asp-controller="Genre" asp-action="AddGenre">
+        <button type="button" class="btn btn-success">Add</button>
+    </a>
+    </div>

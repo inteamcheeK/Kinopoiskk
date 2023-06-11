@@ -1,0 +1,30 @@
+@model List<Movie>
+<table class="table" border="1" style="border-color: rgb(221, 65, 18);">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Remove buttons</th>
+    </tr>
+
+    @foreach (Movie flim in Model)
+    {
+    <tr>
+        <td>@flim.Id</td>
+        <td>@flim.Name</td>
+        <td>@flim.Year</td>
+        <td>@flim.Country</td>
+        <td>
+        <a asp-controller="Movie" asp-action="Edit" asp-route-id="@flim.Id">Изменить</a>
+        </td>
+        <td>
+        <a asp-controller="Movie" asp-action="Delete" asp-route-id="@flim.Id">UDALITb</a>
+        </td>
+    </tr>    
+    }
+</table>
+<a asp-controller="Movie" asp-action="Create">
+    <button type="button" class="btn btn-success">Create</button>
+</a>

@@ -1,0 +1,33 @@
+@model Genre
+
+@{
+    ViewData["Title"] = "Добавить актёра";
+}
+    <form asp-controller="Actor" asp-action="Store">
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3">
+                <label for="FirstName" class="form-label">First Name: </label>
+                <input type="text" class="form-control" name="FirstName" placeholder="First Name" autocomplete="off" />
+        </div>
+        <div class="mb-3">
+                <label for="LastName" class="form-label">Last Name: </label>
+                <input type="text" class="form-control" name="LastName" placeholder="Last Name" autocomplete="off" />
+        </div>
+        <div class="mb-3">
+                <label for="DateOfBirth" class="form-label">Date of Birth </label>
+                <input type="date" class="form-control" name="DateOfBirth" placeholder="Date of Birth" autocomplete="off" />
+        </div>
+    
+        <div class="mb-3">
+        <label for="Country">Country</label>
+            <select name="Country" id="Country" class="form-select">
+                <option value="ru">Russia</option>
+                <option value="gb">Great Britain</option>
+                <option value="us">USA</option>
+                <option value="li">Livan</option>
+            </select>
+</div>
+    <button type="submit" class="btn btn-success">Добавить</button></a>
+    </form>
+</div>

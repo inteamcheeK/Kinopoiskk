@@ -1,0 +1,64 @@
+@model Actor 
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="Actor" asp-action="Update" asp-route-id="@Model.Id" method="post">
+            <div class="mb-3">
+                <label for="FirstName" class="form-label">First Name </label>
+                <input type="text" class="form-control" value="@Model.FirstName" name="FirstName" placeholder="First Name" autocomplete="off" />
+            </div>
+            <div class="mb-3">
+                <label for="LastName" class="form-label"> Last Name: </label> 
+                <input type="text" class="form-control"value="@Model.LastName" name="LastName" placeholder="Last Name" auto complete="off" />
+            </div>
+            <div class="mb-3">
+                <label for="DateOfBirth" class="form-label">Дата рождения </label> 
+                <input type="date" class="form-control"value="@Model.DateOfBirth" name="DateOfBirth" placeholder="Дата рождения" autocomplete="off" />
+            </div>
+
+    <div class="mb-3">
+        <label for="Country">Country</label>
+            <select name="Country" id="Country" class="form-select">
+                @if (Model.Country == "ru" )
+                {
+                    <option selected value="ru">Russia</option>
+                }
+                else
+                {
+                    <option value="ru">Russia</option>
+                }
+                
+                @if (Model.Country == "gb")
+                {
+                    <option selected value="gb">Great Britan</option>
+                }
+                else
+                {
+                    <option value="gb">Great Britain</option>
+                }
+
+                @if (Model.Country == "us")
+                {
+                    <option selected value="us">USA</option>
+                }
+                else
+                {
+                    <option value="us">USA</option>
+                }
+                @if (Model.Country == "li")
+                {
+                    <option selected value="li">Livan</option>
+                }
+                else 
+                {
+                    <option value="li">Livan</option>
+                }
+            </select>
+    </div>
+        <button type="submit" class="btn btn-outline-success">Отправить</button></a>
+</form>
+</div>

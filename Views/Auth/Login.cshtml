@@ -1,0 +1,26 @@
+@model User
+@{
+    Layout = "Auth_Layout";
+}
+<form  asp-controller="Auth" asp-action="SendLogin" method="post">
+
+<div class="container" style="text-align: center;">
+
+  <div class="col-md-4 offset-md-4">
+    <h1>Login</h1>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" name="Email" type="Email" placeholder="Email address">
+  </div>
+ <div class="form-group">
+  <label>Password</label>
+  <input class="form-control" name="Password" type="password" placeholder="Password">
+ </div>
+ <div style="text-align: center;">
+  <br>
+  <button class="btn btn-info">Login</button>
+  <br>
+</div>
+  </div>
+    </div>
+</form>

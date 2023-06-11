@@ -1,0 +1,17 @@
+@model Genre
+
+@{
+    ViewData["Title"] = "Добавить жанр";
+}
+    <form asp-controller="Genre" asp-action="Store">
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3">
+                <label for="Name" class="form-label">Название жанра: </label>
+                <input type="text" class="form-control" name="Name" placeholder="Введите тип жанра" autocomplete="off" />
+        </div>
+    </div>
+</div>
+    <button type="submit" class="btn btn-success">Добавить</button></a>
+    </form>
+</div>

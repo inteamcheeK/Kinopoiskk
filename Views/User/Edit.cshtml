@@ -1,0 +1,25 @@
+@model User
+@{
+    ViewData["Title"] = "Добавить user";
+}
+
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="User" asp-action="Update" asp-route-id="@Model.Id" method="post">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Username </label>
+                <input type="text" class="form-control" value="@Model.Name" name="Name" placeholder="Name" autocomplete="off" />
+            </div>
+            <div class="mb-3">
+                <label for="PhoneNumber" class="form-label"> Phone Number: </label> 
+                <input type="number" class="form-control" value="@Model.PhoneNumber" name="PhoneNumber" placeholder="Phone number" autocomplete="off" />
+            </div>
+    <div class="mb-3">
+        <label for="Password">Password</label>
+            <input type="password" class="form-control" value="@Model.Password" name="Password" placeholder="Choose a password">
+    </div>
+        <button type="submit" class="btn btn-success">Change</button></a>
+</form>
+
+
+</div>
